@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT {predictive-911}.wsgi:application
+web: gunicorn run:server
