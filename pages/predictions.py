@@ -39,7 +39,7 @@ column1 = dbc.Col(
 )
 
 
-df = pd.read_csv(r'C:\Users\btros\Detroit-911-Calls-Dash-App\assets\raw_csvs\scatter_data.csv')
+df = pd.read_csv(\assets\raw_csvs\scatter_data.csv')
 df = df.sample(10000, random_state=42)
 
 fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))

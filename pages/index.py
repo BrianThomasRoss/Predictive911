@@ -47,7 +47,7 @@ column1 = dbc.Col(
     md=4,
 )
 
-data = pd.read_csv(r'C:\Users\btros\Detroit-911-Calls-Dash-App\assets\raw_csvs\scatter_data.csv')
+data = pd.read_csv('\assets\raw_csvs\scatter_data.csv')
 data = data.sample(10000, random_state=42)
 
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')

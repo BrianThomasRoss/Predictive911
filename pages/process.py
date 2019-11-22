@@ -41,7 +41,8 @@ column1 = dbc.Col(
 
             As is best practice I began with a baseline which produced the following:
 
-            After trying a few different models, and parameters the prevailing model was a Random Forest Regressor with 100 trees which 
+            After trying a few different models, and parameters the prevailing model was a Random Forest Regressor with 100 trees which gave a considerable 
+             improvement over the baseline.
 
             
 
