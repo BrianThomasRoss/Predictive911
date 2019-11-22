@@ -1,1 +1,1 @@
-web: gunicorn run:server
+web: gunicorn predictive-911:server
