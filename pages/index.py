@@ -47,23 +47,23 @@ column1 = dbc.Col(
     md=4,
 )
 
-data = pd.read_csv('assets\raw_csvs\scatter_data.csv')
-data = data.sample(10000, random_state=42)
+# data = pd.read_csv('assets\raw_csvs\scatter_data.csv')
+# data = data.sample(10000, random_state=42)
 
-token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
+# token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
-fig = px.scatter_mapbox(data, lat = 'latitude', lon = 'longitude', hover_name='calldescription',zoom=10.25)
-fig.update_layout(mapbox_style="open-street-map")
-fig.update_layout(mapbox_style="dark", mapbox_accesstoken = token)
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+# fig = px.scatter_mapbox(data, lat = 'latitude', lon = 'longitude', hover_name='calldescription',zoom=10.25)
+# fig.update_layout(mapbox_style="open-street-map")
+# fig.update_layout(mapbox_style="dark", mapbox_accesstoken = token)
+# fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 column2 = dbc.Col(
     [
-        html.Br(),
+        # html.Br(),
 
-        html.Hr(),
+        # html.Hr(),
 
-        dcc.Graph(figure=fig),
+        # dcc.Graph(figure=fig),
     ]
 )
 
