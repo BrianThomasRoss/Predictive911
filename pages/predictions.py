@@ -79,7 +79,7 @@ def update_graph(date):
     week = date.dt.week
     dow = date.dt.dayofweek
     
-    df = pd.read_csv(r'C:\Users\btros\Detroit-911-Calls-Dash-App\assets\raw_csvs\pred_template.csv')
+    df = pd.read_csv(r'assets\raw_csvs\pred_template.csv')
     df = df.drop(columns='Unnamed: 0')
     length = len(df)
     
