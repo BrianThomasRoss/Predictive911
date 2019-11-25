@@ -49,11 +49,9 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
         [Input('javascript','event'),
             Input('datepicker','date')])
 
-column2 = dbc.Col(
-    [
-        dcc.Graph(id='graph',figure=fig),
-    ]
-)
+column2 = dbc.Col([
+    dcc.Graph(id='graph', figure='fig')
+])
 
 # def update_graph(date):
 #     date = pd.to_datetime(date)
