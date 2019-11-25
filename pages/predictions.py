@@ -44,15 +44,13 @@ fig.update_layout(
     mapbox_center_lat =42.4)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-@app.callback(
-        Output('graph','figure'),
-        [Input('javascript','event'),
-            Input('datepicker','date')])
 
-column2 = dbc.Col([
+
+column2 = dbc.Col(
+    [
     dcc.Graph(id='graph', figure='fig'),
-],
-md=8)
+    ]
+    ,md=8)
 
 # def update_graph(date):
 #     date = pd.to_datetime(date)
