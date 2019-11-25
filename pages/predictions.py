@@ -4,23 +4,30 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
+import plotly.graph_objects as go
+import pandas as pd
+import datetime as dt
+from joblib import load
 
 # Imports from this application
 from app import app
+
+#
+model = load('assets/pipeline.joblib')
+token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        dcc.Markdown(
-            """
         
-            ## Predictions
+        html.Hr('Select A Date'),
 
-            Your instructions: How to use your app to get new predictions.
-
-            """
-        ),
+        dcc.DatePickerSingle(
+        id = 'datepicker',
+        month_format ='MMMM Y',
+        placeholder='MMMM Y',
+        date=dt.datetime(2020,11,21)),
     ],
     md=4,
 )
