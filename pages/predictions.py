@@ -32,7 +32,7 @@ column1 = dbc.Col(
     md=4,
 )
 
-df = pd.read_csv('assets\raw-csvs\scatter_data.csv')
+df = pd.read_csv('assets/raw-csvs/scatter_data.csv')
 
 fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))
 fig.update_layout(
