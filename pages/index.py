@@ -31,7 +31,7 @@ column1 = dbc.Col(
     md=4,
 )
 
-data = pd.read_csv('assets\raw-csvs\scatter_data.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/BrianThomasRoss/predictive-911/master/assets/raw-csvs/scatter_data.csv')
 
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
