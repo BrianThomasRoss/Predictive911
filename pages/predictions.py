@@ -35,11 +35,9 @@ column1 = dbc.Col(
 df = pd.read_csv('assets/raw-csvs/scatter_data.csv')
 
 fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))
-fig.update_layout(
-    mapbox = {
-        'accesstoken': token,
-        'style': "dark"})
+fig.update_layout(mapbox_style="dark", mapbox_accesstoken = token)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
 
 
 
