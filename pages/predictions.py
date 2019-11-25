@@ -13,7 +13,7 @@ from joblib import load
 from app import app
 
 #
-model = load('assets/pipeline.joblib')
+# model = load('assets/pipeline.joblib')
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
 # 2 column layout. 1st column width = 4/12
@@ -50,8 +50,9 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
             Input('datepicker','date')])
 
 column2 = dbc.Col([
-    dcc.Graph(id='graph', figure='fig')
-])
+    dcc.Graph(id='graph', figure='fig'),
+],
+md=8)
 
 # def update_graph(date):
 #     date = pd.to_datetime(date)
