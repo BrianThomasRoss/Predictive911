@@ -27,7 +27,7 @@ column1 = dbc.Col(
         html.H2('Predict Call Frequency And Location', style = text),
         html.Br(),
 
-        html.H2('Select A Date', style = text),
+        html.H2('Select A Day', style = text),
         html.Br(),
 
         dcc.DatePickerSingle(
@@ -35,7 +35,6 @@ column1 = dbc.Col(
         month_format ='MMMM Y',
         placeholder='MMMM Y',
         date=dt.datetime(2020,11,21)),
-
         html.Br(),
 
         html.Hr(),
@@ -49,7 +48,8 @@ column1 = dbc.Col(
         ),
 
         html.Br(),
-        html.H2('Temperature', style = text),
+        html.H3('Temperature', style = text),
+        html.Br(),
 
         dcc.Input(
         id= 'low_temp',
