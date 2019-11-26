@@ -37,26 +37,26 @@ column1 = dbc.Col(
         html.Label('Select The Weather Forecast',style={'display':'inline-block'} ),
 
         dcc.Dropdown(
-            id = 'weather_dropdown'
+            id = 'weather_dropdown',
             options = weather_options,
             placeholder = 'Conditions'
         ),
 
         dcc.Input(
-        id= 'low_temp'
+        id= 'low_temp',
         placeholder='Forecasted Low',
         type='number',
         value='',
-        min = -20
+        min = -20,
         max = 110
         ),
 
         dcc.Input(
-        id= 'high_temp'
+        id= 'high_temp',
         placeholder='Forecasted High',
         type='number',
         value='',
-        min = -20
+        min = -20,
         max = 110
         ),
     ],
