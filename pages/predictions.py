@@ -81,7 +81,7 @@ column1 = dbc.Col(
         ],
         labelStyle = {
         'display': 'inline-block',
-        'margin-right': 10},
+        'margin-right': 30},
         value='No'
         ),
 
@@ -95,7 +95,7 @@ column1 = dbc.Col(
         ],
         labelStyle = {
         'display': 'inline-block',
-        'margin-right': 10},
+        'margin-right': 30},
         value='No'
         ),
     ],
@@ -114,7 +114,6 @@ fig.update_layout(
     mapbox_center_lon =-83.07587,
     mapbox_center_lat =42.3625
     )
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 
 
