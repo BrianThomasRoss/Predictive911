@@ -38,11 +38,11 @@ fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))
 fig.update_layout(
     mapbox = {
         'accesstoken': token,
-        'style': "dark"},
+        'style': "dark",
+        'zoom': 10},
     showlegend = False,
     mapbox_center_lon =-83,
-    mapbox_center_lat =42.4,
-    zoom = 10
+    mapbox_center_lat =42.4
     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
