@@ -23,7 +23,11 @@ weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light 
 column1 = dbc.Col(
     [
         html.Hr(),
-        html.Div('Select A Date', style = {'display':'inline-block'}),
+        html.H1('Predict 911 Call Frequency And Location'),
+        html.Br(),
+
+        html.H2('Select A Date', style = {'display':'inline-block'}),
+        html.Br(),
 
         dcc.DatePickerSingle(
         id = 'datepicker',
@@ -34,7 +38,8 @@ column1 = dbc.Col(
         html.Br(),
 
         html.Hr(),
-        html.Label('Select The Weather Forecast',style={'display':'inline-block'} ),
+        html.H2('Select The Weather Forecast',style={'display':'inline-block'} ),
+        html.Br(),
 
         dcc.Dropdown(
             id = 'weather_dropdown',
