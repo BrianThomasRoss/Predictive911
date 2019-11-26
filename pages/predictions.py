@@ -112,7 +112,8 @@ fig.update_layout(
         'zoom': 10},
     showlegend = False,
     mapbox_center_lon =-83.07587,
-    mapbox_center_lat =42.3625
+    mapbox_center_lat =42.3625, 
+    height = 1000
     )
 
 
