@@ -16,18 +16,49 @@ from app import app
 # model = load('assets/pipeline.joblib')
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
+weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light Snow', 'Heavy Snow']
+
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
         
-        html.Hr('Select A Date'),
+        html.Label('Select A Date'),
 
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
         placeholder='MMMM Y',
         date=dt.datetime(2020,11,21)),
+
+        html.Br(),
+
+        html.Hr(),
+        html.Label('Select The Weather Forecast',style={'display':'inline-block'} )
+
+        dcc.Dropdown(
+            id = 'weather_dropdown'
+            options = weather_options,
+            placeholder = 'Conditions'
+        ),
+
+        dcc.Input(
+        id= 'low_temp'
+        placeholder='Forecasted Low',
+        type='number',
+        value='',
+        min = -20
+        max = 110
+        ),
+
+        dcc.Input(
+        id= 'high_temp'
+        placeholder='Forecasted High',
+        type='number',
+        value='',
+        min = -20
+        max = 110
+        ),
     ],
     md=4,
 )
@@ -42,7 +73,7 @@ fig.update_layout(
         'zoom': 10},
     showlegend = False,
     mapbox_center_lon =-83.07587,
-    mapbox_center_lat =42.369
+    mapbox_center_lat =42.38
     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
