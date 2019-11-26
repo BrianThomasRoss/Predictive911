@@ -41,8 +41,8 @@ fig.update_layout(
         'style': "dark",
         'zoom': 10},
     showlegend = False,
-    mapbox_center_lon =-83,
-    mapbox_center_lat =42.4
+    mapbox_center_lon =-83.07587,
+    mapbox_center_lat =42.369
     )
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
