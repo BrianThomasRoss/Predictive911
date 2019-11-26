@@ -23,7 +23,7 @@ weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light 
 column1 = dbc.Col(
     [
         html.Hr(),
-        html.Label('Select A Date', style = {'display':'inline-block'}),
+        html.H2('Select A Date', style = {'display':'inline-block'}),
 
         dcc.DatePickerSingle(
         id = 'datepicker',
@@ -43,7 +43,7 @@ column1 = dbc.Col(
         ),
 
         html.Br(),
-        html.Label('Temperature'),
+        html.H2('Temperature'),
 
         dcc.Input(
         id= 'low_temp',
