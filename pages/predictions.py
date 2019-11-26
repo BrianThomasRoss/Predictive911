@@ -27,7 +27,7 @@ column1 = dbc.Col(
         html.H2('Predict Call Frequency And Location', style = text),
         html.Br(),
 
-        html.H2('Select A Day', style = text),
+        html.H3('Select A Day', style = text),
         html.Br(),
 
         dcc.DatePickerSingle(
@@ -38,7 +38,7 @@ column1 = dbc.Col(
         html.Br(),
 
         html.Hr(),
-        html.H2('Weather Forecast', style = text),
+        html.H3('Weather Forecast', style = text),
         html.Br(),
 
         dcc.Dropdown(
@@ -49,6 +49,8 @@ column1 = dbc.Col(
 
         html.Br(),
         html.H3('Temperature', style = text),
+        html.Br(),
+        html.H6('Fahrenheit', style = text),
         html.Br(),
 
         dcc.Input(
@@ -67,6 +69,28 @@ column1 = dbc.Col(
         value='',
         min = -20,
         max = 110
+        ),
+
+        html.H3('Severe Weather', style = text),
+        html.Br(),
+        dcc.RadioItems(
+        id = 'severe_flag'    
+        options=[
+            {'label': 'Yes', 'value': 1},
+            {'label': u'No', 'value': 0}
+        ],
+        value='No'
+        ),
+
+        html.H2('Holiday Or Event', style = text),
+        html.Br(),
+        dcc.RadioItems(
+        id = 'holiday_flag'    
+        options=[
+            {'label': 'Yes', 'value': 1},
+            {'label': u'No', 'value': 0}
+        ],
+        value='No'
         ),
     ],
     md=4,
