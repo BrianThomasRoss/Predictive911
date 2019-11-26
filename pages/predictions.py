@@ -110,10 +110,11 @@ fig.update_layout(
         'accesstoken': token,
         'style': "dark",
         'zoom': 10},
+    margin={"r":0,"t":0,"l":0,"b":0},
     showlegend = False,
     mapbox_center_lon =-83.07587,
     mapbox_center_lat =42.3625, 
-    height = 600
+    height = 600,
     )
 
 
