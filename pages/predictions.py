@@ -27,7 +27,7 @@ column1 = dbc.Col(
         html.H2('Predict Call Frequency And Location', style = text),
         html.Br(),
 
-        html.H2('Select A Date', style = text
+        html.H2('Select A Date', style = text),
         html.Br(),
 
         dcc.DatePickerSingle(
@@ -39,7 +39,7 @@ column1 = dbc.Col(
         html.Br(),
 
         html.Hr(),
-        html.H2('Weather Forecast',style = text),
+        html.H2('Weather Forecast', style = text),
         html.Br(),
 
         dcc.Dropdown(
