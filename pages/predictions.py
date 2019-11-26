@@ -22,8 +22,8 @@ weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light 
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        
-        html.Label('Select A Date'),
+        html.Hr(),
+        html.Label('Select A Date', style = {'display':'inline-block'}),
 
         dcc.DatePickerSingle(
         id = 'datepicker',
@@ -38,9 +38,12 @@ column1 = dbc.Col(
 
         dcc.Dropdown(
             id = 'weather_dropdown',
-            options = weather_options,
+            options = [{'label':option,'value':option} for option in weather_options],
             placeholder = 'Conditions'
         ),
+
+        html.Br(),
+        html.Label('Temperature'),
 
         dcc.Input(
         id= 'low_temp',
