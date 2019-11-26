@@ -74,8 +74,8 @@ column1 = dbc.Col(
         html.H3('Severe Weather', style = text),
         html.Br(),
         dcc.RadioItems(
-        id = 'severe_flag'    
-        options=[
+        id = 'severe_flag',    
+        options = [
             {'label': 'Yes', 'value': 1},
             {'label': u'No', 'value': 0}
         ],
@@ -85,8 +85,8 @@ column1 = dbc.Col(
         html.H2('Holiday Or Event', style = text),
         html.Br(),
         dcc.RadioItems(
-        id = 'holiday_flag'    
-        options=[
+        id = 'holiday_flag',    
+        options = [
             {'label': 'Yes', 'value': 1},
             {'label': u'No', 'value': 0}
         ],
