@@ -17,16 +17,17 @@ from app import app
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
 weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light Snow', 'Heavy Snow']
+text = {'display':'inline-block','textAlign': 'center'}
 
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
         html.Hr(),
-        html.H1('Predict 911 Call Frequency And Location'),
+        html.H2('Predict Call Frequency And Location', style = text),
         html.Br(),
 
-        html.H2('Select A Date', style = {'display':'inline-block'}),
+        html.H2('Select A Date', style = text
         html.Br(),
 
         dcc.DatePickerSingle(
@@ -38,7 +39,7 @@ column1 = dbc.Col(
         html.Br(),
 
         html.Hr(),
-        html.H2('Select The Weather Forecast',style={'display':'inline-block'} ),
+        html.H2('Weather Forecast',style = text),
         html.Br(),
 
         dcc.Dropdown(
@@ -48,7 +49,7 @@ column1 = dbc.Col(
         ),
 
         html.Br(),
-        html.H2('Temperature'),
+        html.H2('Temperature', style = text),
 
         dcc.Input(
         id= 'low_temp',
