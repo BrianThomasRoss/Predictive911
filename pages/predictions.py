@@ -26,6 +26,7 @@ column1 = dbc.Col(
         html.Hr(),
         html.H2('Predict Call Frequency And Location', style = text),
         html.Br(),
+        html.Hr(),
 
         html.H3('Select A Day', style = text),
         html.Br(),
@@ -37,7 +38,6 @@ column1 = dbc.Col(
         date=dt.datetime(2020,11,21)),
         html.Br(),
 
-        html.Hr(),
         html.H3('Weather Forecast', style = text),
         html.Br(),
 
@@ -79,6 +79,9 @@ column1 = dbc.Col(
             {'label': 'Yes', 'value': 1},
             {'label': u'No', 'value': 0}
         ],
+        labelStyle = {
+        'display': 'inline-block',
+        'margin-right': 10},
         value='No'
         ),
 
@@ -90,6 +93,9 @@ column1 = dbc.Col(
             {'label': 'Yes', 'value': 1},
             {'label': u'No', 'value': 0}
         ],
+        labelStyle = {
+        'display': 'inline-block',
+        'margin-right': 10},
         value='No'
         ),
     ],
