@@ -34,7 +34,7 @@ column1 = dbc.Col(
         html.Br(),
 
         html.Hr(),
-        html.Label('Select The Weather Forecast',style={'display':'inline-block'} )
+        html.Label('Select The Weather Forecast',style={'display':'inline-block'} ),
 
         dcc.Dropdown(
             id = 'weather_dropdown'
