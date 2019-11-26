@@ -49,7 +49,7 @@ fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 column2 = dbc.Col(
     [
-    dcc.Graph(id='graph', figure='fig'),
+    dcc.Graph(id='graph', figure=fig),
     ]
     ,md=8)
 
