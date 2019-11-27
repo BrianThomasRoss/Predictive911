@@ -57,8 +57,7 @@ column1 = dbc.Col(
         type='number',
         value='',
         min = -20,
-        max = 110
-        ),
+        max = 110),
 
         dcc.Input(
         id= 'high_temp',
@@ -66,11 +65,9 @@ column1 = dbc.Col(
         type='number',
         value='',
         min = -20,
-        max = 110
-        ),
+        max = 110),
         html.Br(),
-        html.Br(),
-
+        
         html.H3('Severe Weather', style = text),
         html.Br(),
         dcc.RadioItems(
@@ -100,7 +97,7 @@ column1 = dbc.Col(
         ),
         
         html.Hr(),
-        html.Button('Submit', id='click', style = {'margin-left': 100})
+        html.Button('Submit', id='click', style = {'margin-left': 125})
 
     ],
     md=4,
