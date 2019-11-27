@@ -181,7 +181,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     lat_length = lat_range / 10
     lon_length = lon_range / 15
 
-    preds = pipeline.predict(df)
+    preds = model.predict(df)
 
     df['count'] = preds
     
