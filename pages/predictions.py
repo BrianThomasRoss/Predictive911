@@ -40,15 +40,14 @@ column1 = dbc.Col(
 
         html.H3('Weather Forecast', style = text),
         html.Br(),
-
         dcc.Dropdown(
             id = 'weather_dropdown',
             options = [{'label':option,'value':option} for option in weather_options],
             placeholder = 'Conditions'
         ),
-        html.Br(),
-
+        
         html.H3('Temperature', style = text),
+        html.Br(),
         html.H6('Fahrenheit', style = text),
         html.Br(),
 
@@ -99,6 +98,11 @@ column1 = dbc.Col(
         'margin-right': 30},
         value='No'
         ),
+
+        html.Br(),
+        html.Hr(),
+        html.Button('Predict', id='click')
+
     ],
     md=4,
 )
