@@ -46,10 +46,9 @@ column1 = dbc.Col(
             options = [{'label':option,'value':option} for option in weather_options],
             placeholder = 'Conditions'
         ),
+        html.Br(),
 
-        html.Br(),
         html.H3('Temperature', style = text),
-        html.Br(),
         html.H6('Fahrenheit', style = text),
         html.Br(),
 
@@ -70,6 +69,8 @@ column1 = dbc.Col(
         min = -20,
         max = 110
         ),
+        html.Br(),
+        html.Br(),
 
         html.H3('Severe Weather', style = text),
         html.Br(),
@@ -85,7 +86,7 @@ column1 = dbc.Col(
         value='No'
         ),
 
-        html.H2('Holiday Or Event', style = text),
+        html.H3('Holiday Or Event', style = text),
         html.Br(),
         dcc.RadioItems(
         id = 'holiday_flag',    
@@ -112,8 +113,8 @@ fig.update_layout(
         'zoom': 10},
     margin={"r":0,"t":0,"l":0,"b":0},
     showlegend = False,
-    mapbox_center_lon =-83.07587,
-    mapbox_center_lat =42.3625, 
+    mapbox_center_lon =-83.09587,
+    mapbox_center_lat =42.3425, 
     height = 600,
     )
 
