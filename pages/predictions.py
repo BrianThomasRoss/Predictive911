@@ -100,7 +100,7 @@ column1 = dbc.Col(
         ),
         
         html.Hr(),
-        html.Button('Submit', id='click', style = {'margin-left': 50})
+        html.Button('Submit', id='click', style = {'margin-left': 100})
 
     ],
     md=4,
@@ -118,7 +118,7 @@ fig.update_layout(
     showlegend = False,
     mapbox_center_lon =-83.09587,
     mapbox_center_lat =42.3425, 
-    height = 700,
+    height = 650,
     )
 
 
