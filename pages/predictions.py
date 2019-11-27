@@ -204,7 +204,7 @@ def update_pred(date, condition, low_temp, high_temp, severe, holiday):
 
     return fig
 
-fig = update_pred(date, condition, low_temp, high_temp, severe, holiday)
+# fig = update_pred(date, condition, low_temp, high_temp, severe, holiday)
 
 
 
