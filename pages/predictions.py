@@ -98,10 +98,9 @@ column1 = dbc.Col(
         'margin-right': 30},
         value='No'
         ),
-
-        html.Br(),
+        
         html.Hr(),
-        html.Button('Predict', id='click')
+        html.Button('Submit', id='click', style = {'margin-left': 50})
 
     ],
     md=4,
@@ -119,7 +118,7 @@ fig.update_layout(
     showlegend = False,
     mapbox_center_lon =-83.09587,
     mapbox_center_lat =42.3425, 
-    height = 600,
+    height = 700,
     )
 
 
