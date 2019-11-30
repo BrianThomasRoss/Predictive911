@@ -81,8 +81,10 @@ column1 = dbc.Col(
         id = 'severe_flag',    
         options = [
             {'label': 'Yes', 'value': 1},
-            {'label': u'No', 'value': 0}
+            {'label': 'No', 'value': 0},
+
         ],
+        value = 'No',
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
@@ -94,8 +96,9 @@ column1 = dbc.Col(
         id = 'holiday_flag',    
         options = [
             {'label': 'Yes', 'value': 1},
-            {'label': u'No', 'value': 0}
+            {'label': 'No', 'value': 0}
         ],
+        value = 'No',
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
