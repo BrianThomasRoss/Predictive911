@@ -7,6 +7,7 @@ from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
 import datetime as dt
+from sklearn.ensemble import RandomForestRegressor
 from joblib import load
 
 # Imports from this application
