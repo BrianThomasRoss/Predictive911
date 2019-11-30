@@ -150,11 +150,11 @@ column2 = dbc.Col(
 
 def update_pred(date, condition, low, high, severe, holiday):
     date = pd.to_datetime(date)
-    year = date.dt.year
-    month = date.dt.month
-    week = date.dt.week
-    dow = date.dt.dayofweek
-    day = date.dt.day
+    year = date.year
+    month = date.month
+    week = date.week
+    dow = date.dayofweek
+    day = date.day
 
     df = pd.read_csv('assets/raw-csvs/pred_template.csv')
     df = df.drop(columns='Unnamed: 0')
