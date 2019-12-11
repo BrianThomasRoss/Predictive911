@@ -154,7 +154,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     month = date.month
     week = date.week
     dow = date.dayofweek
-    day = date.day
+    day = datew.day
 
     df = pd.read_csv('assets/raw-csvs/pred_template.csv')
     df = df.drop(columns='Unnamed: 0')
@@ -166,13 +166,13 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['week'] = [week]*length
     df['dow'] = [dow]*length
 
-    df['is_holiday'] = [holiday]*length
+    df['is_holiday'] = [1]*length
 
     # Weather
     df['temp_min'] = [low]*length
     df['temp_max'] = [high]*length
     df['weather_id'] = [condition]*length
-    df['is_severe'] = [severe]*length
+    df['is_severe'] = [1]*length
 
     lat_max =  42.46
     lon_max = -82.91
