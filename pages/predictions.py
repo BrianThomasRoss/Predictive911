@@ -154,7 +154,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     month = date.month
     week = date.week
     dow = date.dayofweek
-    day = datew.day
+    day = date.day
 
     df = pd.read_csv('assets/raw-csvs/pred_template.csv')
     df = df.drop(columns='Unnamed: 0')
