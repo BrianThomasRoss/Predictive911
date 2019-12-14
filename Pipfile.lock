@@ -25,10 +25,10 @@
         },
         "dash": {
             "hashes": [
-                "sha256:84fcc770e7fba4ddc867570b6527249dbcda2e0cc3989ea00b34d97b036d8a98"
+                "sha256:3d111272dcc3b1ae5471656f66b761263aeba53e595abb617702295849d16702"
             ],
             "index": "pypi",
-            "version": "==1.6.1"
+            "version": "==1.7.0"
         },
         "dash-bootstrap-components": {
             "hashes": [
@@ -39,9 +39,9 @@
         },
         "dash-core-components": {
             "hashes": [
-                "sha256:fadd16a2b4ea8abc60b72c08b5a9d6c1a86eb1f56e926be67773259f47eb9048"
+                "sha256:d3434a070ac3005d61652f2069a50bae47cfe28f49b226e8bb66d7f3f256562b"
             ],
-            "version": "==1.5.1"
+            "version": "==1.6.0"
         },
         "dash-html-components": {
             "hashes": [
@@ -51,9 +51,9 @@
         },
         "dash-renderer": {
             "hashes": [
-                "sha256:4643d5f5c841080cc12c9b2bc090161d6bcb09d21f316307e43cd0a7b9025645"
+                "sha256:cb784db3511f114d69dbf17b9128e99525d0ca8c864cc0ab9806776f919b5209"
             ],
-            "version": "==1.2.1"
+            "version": "==1.2.2"
         },
         "dash-table": {
             "hashes": [
@@ -82,11 +82,11 @@
         },
         "gunicorn": {
             "hashes": [
-                "sha256:5a3bf56a1d44c2ed15dae2f9d2a9e7c87acc3517f7225e27e4ece3098a2b5efc",
-                "sha256:fe457b7093b353cefcb2ebc40d192fc7c8a62bba49da648c9e1fa0671fa654d1"
+                "sha256:1904bb2b8a43658807108d59c3f3d56c2b6121a701161de0ddf9ad140073c626",
+                "sha256:cd4a810dd51bf497552cf3f863b575dabd73d6ad6a91075b65936b151cbf4f9c"
             ],
             "index": "pypi",
-            "version": "==20.0.2"
+            "version": "==20.0.4"
         },
         "itsdangerous": {
             "hashes": [
@@ -188,11 +188,11 @@
         },
         "plotly": {
             "hashes": [
-                "sha256:1950a5be28caddea3a41d41016750ddf5a602952efb423b39c73adafe6876492",
-                "sha256:bd6f453efa171dcea32fd08ad981712829f3dba4509603b3c3b8683b140ef30b"
+                "sha256:582ecdfd0e7db3a6f9e079c43f598280489b97d59f38b4c8f8400dc7eb3a3705",
+                "sha256:acc94f17452471ca3446c2ce491c4d1affb99b9ddd9eac4e05614ac4318f8780"
             ],
             "index": "pypi",
-            "version": "==4.3.0"
+            "version": "==4.4.1"
         },
         "python-dateutil": {
             "hashes": [
