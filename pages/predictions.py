@@ -179,7 +179,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     lat_min =  42.25
     lon_min = -83.28
 
-    lon_range = lon_max - lon_min
+    lon_range = lon_max + lon_min
     lat_range = lat_max - lat_min
 
     lat_length = lat_range / 10
