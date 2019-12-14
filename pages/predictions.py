@@ -160,11 +160,11 @@ def update_pred(date, condition, low, high, severe, holiday):
     df = df.drop(columns='Unnamed: 0')
     length = len(df)
 
-    df['year'] = [year]*length
-    df['month'] = [month]*length
-    df['day'] = [day]*length
-    df['week'] = [week]*length
-    df['dow'] = [dow]*length
+    df['year'] = [2020]*length
+    df['month'] = [12]*length
+    df['day'] = [25]*length
+    df['week'] = [50]*length
+    df['dow'] = [4]*length
 
     df['is_holiday'] = [1]*length
 
