@@ -175,11 +175,11 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_severe'] = [1]*length
 
     lat_max =  42.46
-    lon_max = -82.91
+    lon_max = -83.28
     lat_min =  42.25
-    lon_min = -83.28
+    lon_min = -82.91
 
-    lon_range = lon_max + lon_min
+    lon_range = lon_max - lon_min
     lat_range = lat_max - lat_min
 
     lat_length = lat_range / 10
