@@ -26,18 +26,18 @@ text = {'display':'inline-block','textAlign': 'center'}
 column1 = dbc.Col(
     [
         html.Hr(),
-        html.H2('Predict Call Frequency And Location', style = text),
+        html.H3('Predict Call Frequency And Location', style = text),
         html.Br(),
         html.Hr(),
 
         html.H3('Select A Day', style = text),
         html.Br(),
-
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
         placeholder='MMMM Y',
         date=dt.datetime(2020,11,21)),
+        html.Br(),
         html.Br(),
 
         html.H3('Weather Forecast', style = text),
@@ -54,11 +54,11 @@ column1 = dbc.Col(
             placeholder = 'Conditions'
         ),
         html.Br(),
-        
+
         html.H3('Forecasted Temperature', style = text),
         html.Br(),
         html.Hr(),
-        
+
         html.H6('Low', style=text),
         dcc.Slider(
         id= 'low_temp',
@@ -73,8 +73,7 @@ column1 = dbc.Col(
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
-        html.Hr(),
-        
+
         html.H6('High'),
         dcc.Slider(
         id= 'high_temp',
@@ -89,12 +88,13 @@ column1 = dbc.Col(
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
+        html.Hr(),
         html.Br(),
-        
+
         html.H3('Severe Weather', style = text),
         html.Br(),
         dcc.RadioItems(
-        id = 'severe_flag',    
+        id = 'severe_flag',
         options = [
             {'label': 'Yes', 'value': 'Yes'},
             {'label': 'No', 'value': 'No'},
@@ -109,7 +109,7 @@ column1 = dbc.Col(
         html.H3('Holiday Or Event', style = text),
         html.Br(),
         dcc.RadioItems(
-        id = 'holiday_flag',    
+        id = 'holiday_flag',
         options = [
             {'label': 'Yes', 'value': 'Yes'},
             {'label': 'No', 'value': 'No'}
@@ -119,10 +119,8 @@ column1 = dbc.Col(
         'display': 'inline-block',
         'margin-right': 30},
         ),
-        
-        html.Hr(),
-        html.Button('Submit', id='click', style = {'margin-left': 150})
 
+        html.Hr(),
     ],
     md=4,
 )
@@ -187,8 +185,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_holiday'] = [holiday]*length
 
     # Weather
-    df['temp_min'] = [low]*length
-    df['temp_max'] = [high]*length
+    df['temp_min'] = [65]*length
+    df['temp_max'] = [70]*length
     df['weather_id'] = [800]*length
     df['is_severe'] = [severe]*length
 
