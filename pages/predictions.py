@@ -67,7 +67,7 @@ column1 = dbc.Col(
         marks={
             0: {'label': '0 °F', 'style': {'color': '#77b0b1'}},
             32: {'label': '32 °F'},
-            65: {'label': '65 °F'},
+            68: {'label': '68 °F'},
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
@@ -82,7 +82,7 @@ column1 = dbc.Col(
         marks={
             0: {'label': '0 °F', 'style': {'color': '#77b0b1'}},
             32: {'label': '32 °F'},
-            65: {'label': '65 °F'},
+            68: {'label': '68 °F'},
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
@@ -182,9 +182,9 @@ def update_pred(date, condition, low, high, severe, holiday):
 
     # Weather
 
-    df['temp_min'] = [65]*length
-    df['temp_max'] = [70]*length
-    df['weather_id'] = [600]*length
+    df['temp_min'] = [low]*length
+    df['temp_max'] = [high]*length
+    df['weather_id'] = [condition]*length
     df['is_severe'] = [severe]*length
 
     lat_max =  42.46
@@ -200,7 +200,7 @@ def update_pred(date, condition, low, high, severe, holiday):
 
     preds = model.predict(df)
 
-    df['count'] = preds    
+    df['count'] = preds
     
     df['lat_center'] = lat_min + ((lat_length * df['lat_grid']) + (.5*lat_length))
     df['lon_center'] = lon_min + ((lon_length * df['lon_grid']) + (.5*lon_length))
@@ -220,10 +220,5 @@ def update_pred(date, condition, low, high, severe, holiday):
     )
 
     return fig
-
-# fig = update_pred(date, condition, low_temp, high_temp, severe, holiday)
-
-
-
 
 layout = dbc.Row([column1, column2])
