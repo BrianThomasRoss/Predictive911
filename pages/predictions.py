@@ -24,6 +24,7 @@ text = {'display':'inline-block','textAlign': 'center'}
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
+    [
         html.H3('Predict Call Frequency And Location', style = text),
         html.Br(),
         html.Hr(),
