@@ -71,7 +71,8 @@ column1 = dbc.Col(
             32: {'label': '32 °F'},
             65: {'label': '65 °F'},
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
-        }),
+        },
+        included=False),
         
         html.H6('High'),
         dcc.Slider(
@@ -85,7 +86,8 @@ column1 = dbc.Col(
             32: {'label': '32 °F'},
             65: {'label': '65 °F'},
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
-        }),
+        },
+        included=False),
         html.Br(),
         
         html.H3('Severe Weather', style = text),
