@@ -17,9 +17,12 @@ from app import app
 model = load('assets/model.joblib')
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
-weather_options = ['Clear', 'Light Rain', 'Heavy Rain', ' Thunderstorm', 'Light Snow', 'Heavy Snow']
-condition_codes = [800, 500, 502, 202, 600, 602]
+weather_options = {'Clear': 800, 'Light Rain': 500, 'Heavy Rain': 502, 
+                   ' Thunderstorm': 202, 'Light Snow': 600, 'Heavy Snow':602}
+
 text = {'display':'inline-block','textAlign': 'center'}
+
+
 
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
@@ -43,14 +46,7 @@ column1 = dbc.Col(
         html.Br(),
         dcc.Dropdown(
             id = 'weather_dropdown',
-            options = [
-                {'label':'Clear','value':800},
-                {'label': 'Light Rain', 'value': 500},
-                {'label': 'Heavy Rain', 'value': 502},
-                {'label': 'Thunderstorm', 'value': 202},
-                {'label': 'Light Snow', 'value': 600},
-                {'label': 'Heavy Snow', 'value': 602}],
-            value = 800
+            options = [{'label': i, 'value': i} for i in weather_options]
         ),
         html.Br(),
 
@@ -145,6 +141,8 @@ column2 = dbc.Col(
     dcc.Graph(id='prediction-graph'),
     ]
     ,md=8)
+
+
 
 
 @app.callback(
