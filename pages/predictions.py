@@ -183,7 +183,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     # Weather
     df['temp_min'] = [65]*length
     df['temp_max'] = [70]*length
-    df['weather_id'] = [800]*length
+    df['weather_id'] = [condition]*length
     df['is_severe'] = [severe]*length
 
     lat_max =  42.46
