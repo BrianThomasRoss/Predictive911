@@ -53,9 +53,11 @@ column1 = dbc.Col(
                 {'label': 'Heavy Snow', 'value': 602}],
             placeholder = 'Conditions'
         ),
+        html.Br()
         
         html.H3('Forecasted Temperature', style = text),
         html.Br(),
+        html.Hr(),
         
         html.H6('Low', style=text),
         dcc.Slider(
@@ -71,6 +73,7 @@ column1 = dbc.Col(
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
+        html.Hr()
         
         html.H6('High'),
         dcc.Slider(
