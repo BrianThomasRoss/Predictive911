@@ -112,21 +112,21 @@ column1 = dbc.Col(
     md=4,
 )
 
-# df = pd.read_csv('assets/raw-csvs/scatter_data.csv')
+df = pd.read_csv('assets/raw-csvs/scatter_data.csv')
 
-# fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))
-# fig.update_layout(
-#     mapbox = {
-#         'accesstoken': token,
-#         'style': "dark",
-#         'zoom': 10},
-#     margin={"r":0,"t":0,"l":0,"b":0},
-#     showlegend = False,
-#     mapbox_center_lon =-83.09587,
-#     mapbox_center_lat =42.3425, 
-#     height = 650,
-#     width  = 800
-#     )
+fig = go.Figure(go.Densitymapbox(lat=df.latitude, lon=df.longitude, radius=5))
+fig.update_layout(
+    mapbox = {
+        'accesstoken': token,
+        'style': "dark",
+        'zoom': 10},
+    margin={"r":0,"t":0,"l":0,"b":0},
+    showlegend = False,
+    mapbox_center_lon =-83.09587,
+    mapbox_center_lat =42.3425, 
+    height = 650,
+    width  = 800
+    )
 
 
 
