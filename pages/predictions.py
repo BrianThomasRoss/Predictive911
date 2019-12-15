@@ -166,13 +166,13 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['week'] = [week]*length
     df['dow'] = [dow]*length
 
-    df['is_holiday'] = [1]*length
+    df['is_holiday'] = [holiday]*length
 
     # Weather
-    df['temp_min'] = [20]*length
-    df['temp_max'] = [30]*length
+    df['temp_min'] = [low]*length
+    df['temp_max'] = [high]*length
     df['weather_id'] = [800]*length
-    df['is_severe'] = [1]*length
+    df['is_severe'] = [severe]*length
 
     lat_max =  42.46
     lon_max = -82.91
@@ -192,7 +192,7 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['lat_center'] = lat_min + ((lat_length * df['lat_grid']) + (.5*lat_length))
     df['lon_center'] = lon_min + ((lon_length * df['lon_grid']) + (.5*lon_length))
 
-    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, radius=20, hoverinfo=df.count))
+    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, radius=20, hovertext=df.count, hoverinfo="text"))
     fig.update_layout(
         mapbox = {
             'accesstoken': token,
