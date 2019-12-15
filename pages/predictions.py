@@ -25,7 +25,7 @@ text = {'display':'inline-block','textAlign': 'center'}
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        html.H3('Predict Call Frequency And Location', style = text),
+        html.H3("Here's a change", style = text),
         html.Br(),
         html.Hr(),
 
