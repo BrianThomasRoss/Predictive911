@@ -24,8 +24,6 @@ text = {'display':'inline-block','textAlign': 'center'}
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
-    [
-        html.Hr(),
         html.H3('Predict Call Frequency And Location', style = text),
         html.Br(),
         html.Hr(),
@@ -56,7 +54,6 @@ column1 = dbc.Col(
         html.Br(),
 
         html.H5('Forecasted Temperature', style = text),
-        html.Br(),
         html.Hr(),
 
         html.H6('Low', style=text),
@@ -89,7 +86,6 @@ column1 = dbc.Col(
         },
         included=False),
         html.Hr(),
-        html.Br(),
 
         html.H5('Severe Weather', style = text),
         html.Br(),
