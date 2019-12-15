@@ -50,7 +50,7 @@ column1 = dbc.Col(
                 {'label': 'Thunderstorm', 'value': 202},
                 {'label': 'Light Snow', 'value': 600},
                 {'label': 'Heavy Snow', 'value': 602}],
-            placeholder = 'Conditions'
+            value = 800
         ),
         html.Br(),
 
@@ -181,6 +181,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_holiday'] = [holiday]*length
 
     # Weather
+    condition = condition.astype(int)
+
     df['temp_min'] = [65]*length
     df['temp_max'] = [70]*length
     df['weather_id'] = [condition]*length
