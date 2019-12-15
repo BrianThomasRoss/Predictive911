@@ -149,6 +149,7 @@ column2 = dbc.Col(
 
 
 def update_pred(date, condition, low, high, severe, holiday):
+    
     date = pd.to_datetime(date)
     year = date.year
     month = date.month
@@ -171,8 +172,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_holiday'] = [holiday]*length
 
     # Weather
-    df['temp_min'] = [int(low)]*length
-    df['temp_max'] = [int(high)]*length
+    df['temp_min'] = [float(low)]*length
+    df['temp_max'] = [float(high)]*length
     df['weather_id'] = [800]*length
     df['is_severe'] = [severe]*length
 
