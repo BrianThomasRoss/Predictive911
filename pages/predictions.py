@@ -189,13 +189,12 @@ def update_pred(date, condition, low, high, severe, holiday):
 
     preds = model.predict(df)
 
-    df['count'] = preds
-    
+    df['count'] = preds    
     
     df['lat_center'] = lat_min + ((lat_length * df['lat_grid']) + (.5*lat_length))
     df['lon_center'] = lon_min + ((lon_length * df['lon_grid']) + (.5*lon_length))
 
-    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df.count, radius=20, 
+    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, radius=20, 
                     hovertemplate= 'Number of calls: %{z}))
     fig.update_layout(
         mapbox = {
