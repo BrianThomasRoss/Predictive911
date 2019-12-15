@@ -214,7 +214,7 @@ def update_pred(date, condition, low, high, severe, holiday):
         mapbox = {
             'accesstoken': token,
             'style': "dark",
-            'zoom': 11},
+            'zoom': 9},
         margin={"r":0,"t":0,"l":0,"b":0},
         showlegend = False,
         mapbox_center_lon =-83.09587,
