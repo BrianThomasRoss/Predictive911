@@ -25,7 +25,7 @@ text = {'display':'inline-block','textAlign': 'center'}
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
-        html.H3("Here's a change", style = text),
+        html.H3('Predict Call Frequency And Location', style = text),
         html.Br(),
         html.Hr(),
 
@@ -185,7 +185,7 @@ def update_pred(date, condition, low, high, severe, holiday):
         condition = 800
     else:
         condition = condition
-    
+
 
     df['temp_min'] = [80]*length
     df['temp_max'] = [85]*length
