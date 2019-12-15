@@ -18,7 +18,7 @@ model = load('assets/model.joblib')
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
 weather_options = {'Clear': 800, 'Light Rain': 500, 'Heavy Rain': 502, 
-                   ' Thunderstorm': 202, 'Light Snow': 600, 'Heavy Snow':602}
+                   'Thunderstorm': 202, 'Light Snow': 600, 'Heavy Snow':602}
 
 text = {'display':'inline-block','textAlign': 'center'}
 
@@ -214,7 +214,7 @@ def update_pred(date, condition, low, high, severe, holiday):
         mapbox = {
             'accesstoken': token,
             'style': "dark",
-            'zoom': 10},
+            'zoom': 11},
         margin={"r":0,"t":0,"l":0,"b":0},
         showlegend = False,
         mapbox_center_lon =-83.09587,
