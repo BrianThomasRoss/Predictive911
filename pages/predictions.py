@@ -30,7 +30,7 @@ column1 = dbc.Col(
         html.Br(),
         html.Hr(),
 
-        html.H3('Select A Day', style = text),
+        html.H5('Select A Day', style = text),
         html.Br(),
         dcc.DatePickerSingle(
         id = 'datepicker',
@@ -40,7 +40,7 @@ column1 = dbc.Col(
         html.Br(),
         html.Br(),
 
-        html.H3('Weather Forecast', style = text),
+        html.H5('Weather Forecast', style = text),
         html.Br(),
         dcc.Dropdown(
             id = 'weather_dropdown',
@@ -55,7 +55,7 @@ column1 = dbc.Col(
         ),
         html.Br(),
 
-        html.H3('Forecasted Temperature', style = text),
+        html.H5('Forecasted Temperature', style = text),
         html.Br(),
         html.Hr(),
 
@@ -91,7 +91,7 @@ column1 = dbc.Col(
         html.Hr(),
         html.Br(),
 
-        html.H3('Severe Weather', style = text),
+        html.H5('Severe Weather', style = text),
         html.Br(),
         dcc.RadioItems(
         id = 'severe_flag',
@@ -106,7 +106,7 @@ column1 = dbc.Col(
         'margin-right': 30},
         ),
 
-        html.H3('Holiday Or Event', style = text),
+        html.H5('Holiday Or Event', style = text),
         html.Br(),
         dcc.RadioItems(
         id = 'holiday_flag',
@@ -119,7 +119,6 @@ column1 = dbc.Col(
         'display': 'inline-block',
         'margin-right': 30},
         ),
-
         html.Hr(),
     ],
     md=4,
