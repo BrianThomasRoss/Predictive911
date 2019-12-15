@@ -54,24 +54,22 @@ column1 = dbc.Col(
             placeholder = 'Conditions'
         ),
         
-        html.H3('Temperature', style = text),
+        html.H3('Forecasted Temperature', style = text),
         html.Br(),
-        html.H6('Fahrenheit', style = text),
+        html.H6('(Fahrenheit)', style = text),
         html.Br(),
-
-        dcc.Input(
+        
+        html.H6('Low', style=text),
+        dcc.Slider(
         id= 'low_temp',
-        placeholder='Forecasted Low',
-        type='number',
-        value='',
+        value=60,
         min = -20,
         max = 110),
-
-        dcc.Input(
+        
+        html.H6('High'),
+        dcc.Slider(
         id= 'high_temp',
-        placeholder='Forecasted High',
-        type='number',
-        value='',
+        value=70,
         min = -20,
         max = 110),
         html.Br(),
