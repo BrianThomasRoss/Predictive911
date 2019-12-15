@@ -53,7 +53,7 @@ column1 = dbc.Col(
                 {'label': 'Heavy Snow', 'value': 602}],
             placeholder = 'Conditions'
         ),
-        html.Br()
+        html.Br(),
         
         html.H3('Forecasted Temperature', style = text),
         html.Br(),
