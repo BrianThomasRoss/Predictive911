@@ -73,7 +73,7 @@ column1 = dbc.Col(
             100: {'label': '100 °F', 'style': {'color': '#f50'}}
         },
         included=False),
-        html.Hr()
+        html.Hr(),
         
         html.H6('High'),
         dcc.Slider(
