@@ -64,14 +64,16 @@ column1 = dbc.Col(
         id= 'low_temp',
         value=60,
         min = -20,
-        max = 110),
+        max = 110,
+        step = 1),
         
         html.H6('High'),
         dcc.Slider(
         id= 'high_temp',
         value=70,
         min = -20,
-        max = 110),
+        max = 110,
+        step = 1),
         html.Br(),
         
         html.H3('Severe Weather', style = text),
@@ -170,8 +172,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_holiday'] = [holiday]*length
 
     # Weather
-    df['temp_min'] = [low]*length
-    df['temp_max'] = [high]*length
+    df['temp_min'] = [low.astype(int)]*length
+    df['temp_max'] = [high.astype(int)]*length
     df['weather_id'] = [800]*length
     df['is_severe'] = [severe]*length
 
