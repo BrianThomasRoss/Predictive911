@@ -142,7 +142,7 @@ fig.update_layout(
 
 column2 = dbc.Col(
     [
-    dcc.Graph(id='prediction-graph', figure=fig),
+    dcc.Graph(id='prediction-graph'),
     ]
     ,md=8)
 
