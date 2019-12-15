@@ -198,7 +198,7 @@ def update_pred(date, condition, low, high, severe, holiday):
             'accesstoken': token,
             'style': "dark",
             'zoom': 10},
-        margin={"r":-4,"t":0,"l":0,"b":0},
+        margin={"r":0,"t":0,"l":0,"b":0},
         showlegend = False,
         mapbox_center_lon =-83.09587,
         mapbox_center_lat =42.3425, 
