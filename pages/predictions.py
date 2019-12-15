@@ -81,8 +81,8 @@ column1 = dbc.Col(
         dcc.RadioItems(
         id = 'severe_flag',    
         options = [
-            {'label': 'Yes', 'value': 1},
-            {'label': 'No', 'value': 0},
+            {'label': 'Yes', 'value': 'Yes'},
+            {'label': 'No', 'value': 'No'},
 
         ],
         value = 'No',
@@ -96,8 +96,8 @@ column1 = dbc.Col(
         dcc.RadioItems(
         id = 'holiday_flag',    
         options = [
-            {'label': 'Yes', 'value': 1},
-            {'label': 'No', 'value': 0}
+            {'label': 'Yes', 'value': 'Yes'},
+            {'label': 'No', 'value': 'No'}
         ],
         value = 'No',
         labelStyle = {
@@ -155,8 +155,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     week = date.week
     dow = date.dayofweek
     day = date.day
-    holiday = int(holiday)
-    severe = int(severe)
+    holiday = 1 if holiday == 'Yes' else 0
+    severe = 1 if severe == 'Yes' else 0
 
     df = pd.read_csv('assets/raw-csvs/pred_template.csv')
     df = df.drop(columns='Unnamed: 0')
