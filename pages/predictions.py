@@ -138,7 +138,7 @@ fig.update_layout(
 
 column2 = dbc.Col(
     [
-    dcc.Graph(id='prediction-graph'),
+    dcc.Graph(id='prediction-graph', animate=True),
     ]
     ,md=8)
 
@@ -179,14 +179,9 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['is_holiday'] = [holiday]*length
 
     # Weather
-    if condition is None:
-        condition = 800
-    else:
-        condition = condition
 
-
-    df['temp_min'] = [80]*length
-    df['temp_max'] = [85]*length
+    df['temp_min'] = [low]*length
+    df['temp_max'] = [high]*length
     df['weather_id'] = [condition]*length
     df['is_severe'] = [severe]*length
 
