@@ -3,7 +3,7 @@ import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import pandas as pd
 import datetime as dt
@@ -21,6 +21,8 @@ weather_options = {'Clear': 800, 'Light Rain': 500, 'Heavy Rain': 502,
                    'Thunderstorm': 202, 'Light Snow': 600, 'Heavy Snow':602}
 
 text = {'display':'inline-block','textAlign': 'center'}
+
+column_order = pd.read_csv('assets/raw-csvs/testy.csv')
 
 
 
@@ -46,7 +48,8 @@ column1 = dbc.Col(
         html.Br(),
         dcc.Dropdown(
             id = 'weather_dropdown',
-            options = [{'label': i, 'value': i} for i in weather_options]
+            options = [{'label': i, 'value': i} for i in weather_options],
+            value = 'Clear'
         ),
         html.Br(),
 
@@ -89,11 +92,11 @@ column1 = dbc.Col(
         dcc.RadioItems(
         id = 'severe_flag',
         options = [
-            {'label': 'Yes', 'value': 'Yes'},
-            {'label': 'No', 'value': 'No'},
+            {'label': 'Yes', 'value': 1},
+            {'label': 'No', 'value': 0},
 
         ],
-        value = 'No',
+        value = 0,
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
@@ -104,10 +107,10 @@ column1 = dbc.Col(
         dcc.RadioItems(
         id = 'holiday_flag',
         options = [
-            {'label': 'Yes', 'value': 'Yes'},
-            {'label': 'No', 'value': 'No'}
+            {'label': 'Yes', 'value': 1},
+            {'label': 'No', 'value': 0}
         ],
-        value = 'No',
+        value = 0,
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
@@ -138,13 +141,18 @@ fig.update_layout(
 
 column2 = dbc.Col(
     [
-    dcc.Graph(id='prediction-graph', animate=True),
+    html.Div(id='my-div'),
+    dcc.Graph(id='prediction-graph'),
     ]
     ,md=8)
 
 
-
-
+@app.callback(
+    Output(component_id='my-div', component_property='children'),
+    [Input('severe_flag', component_property='value')]
+)
+def update_output_div(input_value):
+    return f'You\'ve entered "{input_value+1}"'
 @app.callback(
     Output('prediction-graph', 'figure'),
     [Input('datepicker', 'date'),
@@ -163,11 +171,8 @@ def update_pred(date, condition, low, high, severe, holiday):
     week = date.week
     dow = date.dayofweek
     day = date.day
-    holiday = 1 if holiday == 'Yes' else 0
-    severe = 1 if severe == 'Yes' else 0
 
     df = pd.read_csv('assets/raw-csvs/pred_template.csv')
-    df = df.drop(columns='Unnamed: 0')
     length = len(df)
 
     df['year'] = [year]*length
@@ -176,14 +181,14 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['week'] = [week]*length
     df['dow'] = [dow]*length
 
-    df['is_holiday'] = [holiday]*length
+    df['is_holiday'] = [0]*length
 
     # Weather
 
-    df['temp_min'] = [low]*length
-    df['temp_max'] = [high]*length
-    df['weather_id'] = [condition]*length
-    df['is_severe'] = [severe]*length
+    df['temp_min'] = [65]*length
+    df['temp_max'] = [65]*length
+    df['weather_id'] = [800]*length
+    df['severe'] = [0]*length
 
     lat_max =  42.46
     lon_max = -82.91
@@ -195,7 +200,8 @@ def update_pred(date, condition, low, high, severe, holiday):
 
     lat_length = lat_range / 10
     lon_length = lon_range / 15
-
+    
+    df = df[column_order.columns]
     preds = model.predict(df)
 
     df['count'] = preds
@@ -203,13 +209,13 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['lat_center'] = lat_min + ((lat_length * df['lat_grid']) + (.5*lat_length))
     df['lon_center'] = lon_min + ((lon_length * df['lon_grid']) + (.5*lon_length))
 
-    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df['count'], radius=20,
+    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df['count'], radius=60,
                     showscale=False))
     fig.update_layout(
         mapbox = {
             'accesstoken': token,
             'style': "dark",
-            'zoom': 9},
+            'zoom': 10},
         margin={"r":0,"t":0,"l":0,"b":0},
         showlegend = False,
         mapbox_center_lon =-83.09587,
