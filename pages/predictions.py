@@ -210,7 +210,7 @@ def update_pred(date, condition, low, high, severe, holiday):
 
     fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df['count'], radius=70,
                     showscale=False, hovertemplate='Number of Calls Predicted: %{z:.0f}<extra></extra>',
-                    colorscale='Jet'))
+                    colorscale='Jet', zmax=30, zmin=1, zmid=20))
     fig.update_layout(
         mapbox = {
             'accesstoken': token,
