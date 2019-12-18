@@ -34,17 +34,19 @@ column1 = dbc.Col(
         html.Br(),
         html.Hr(),
 
-        html.H5('Select A Day', style = text),
+        html.H5('Select A Day',
+        style={'padding-left':'30%'}),
         html.Br(),
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
         placeholder='MMMM Y',
-        date=dt.datetime(2020,11,21)),
+        date=dt.datetime(2020,11,21),
+        style={'padding-left':'28%'}),
         html.Br(),
         html.Br(),
 
-        html.H5('Weather Forecast', style = text),
+        html.H5('Weather Forecast', style={'padding-left':'25%'}),
         html.Br(),
         dcc.Dropdown(
             id = 'weather_dropdown',
@@ -53,10 +55,10 @@ column1 = dbc.Col(
         ),
         html.Br(),
 
-        html.H5('Forecasted Temperature', style = text),
+        html.H5('Forecasted Temperature', style={'padding-left':'19%'}),
         html.Hr(),
 
-        html.H6('Low', style=text),
+        html.H6('Low', style={'padding-left':'45%'}),
         dcc.Slider(
         id= 'low_temp',
         value=60,
@@ -71,7 +73,7 @@ column1 = dbc.Col(
         },
         included=False),
 
-        html.H6('High'),
+        html.H6('High', style={'padding-left':'44%'}),
         dcc.Slider(
         id= 'high_temp',
         value=70,
@@ -87,7 +89,7 @@ column1 = dbc.Col(
         included=False),
         html.Hr(),
 
-        html.H5('Severe Weather', style = text),
+        html.H5('Severe Weather', style={'padding-left':'30%'}),
         html.Br(),
         dcc.RadioItems(
         id = 'severe_flag',
@@ -100,9 +102,10 @@ column1 = dbc.Col(
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
+        style={'padding-left':'33%'}
         ),
 
-        html.H5('Holiday Or Event', style = text),
+        html.H5('Holiday Or Event', style={'padding-left':'27%'}),
         html.Br(),
         dcc.RadioItems(
         id = 'holiday_flag',
@@ -114,6 +117,7 @@ column1 = dbc.Col(
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
+        style={'padding-left':'33%'}
         ),
         html.Hr(),
     ],
