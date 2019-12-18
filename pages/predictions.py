@@ -51,7 +51,7 @@ column1 = dbc.Col(
             options = [{'label': i, 'value': j} for i,j in weather_options.items()],
             value = 800
         ),
-        html.Br()
+        html.Br(),
 
         html.H5('Forecasted Temperature', style={'padding-left':'19%'}),
         html.Hr(),
