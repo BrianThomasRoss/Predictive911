@@ -48,8 +48,8 @@ column1 = dbc.Col(
         html.Br(),
         dcc.Dropdown(
             id = 'weather_dropdown',
-            options = [{'label': i, 'value': i} for i in weather_options],
-            value = 'Clear'
+            options = [{'label': i, 'value': j} for i,j in weather_options.items()],
+            value = 800
         ),
         html.Br(),
 
@@ -147,24 +147,18 @@ column2 = dbc.Col(
     ,md=8)
 
 
-@app.callback(
-    Output(component_id='my-div', component_property='children'),
-    [Input('severe_flag', component_property='value')]
-)
-def update_output_div(input_value):
-    return f'You\'ve entered "{input_value+1}"'
+
+
 @app.callback(
     Output('prediction-graph', 'figure'),
     [Input('datepicker', 'date'),
-     Input('weather_dropdown', 'condition'),
-     Input('low_temp', 'low'),
-     Input('high_temp', 'high'),
-     Input('severe_flag', 'severe'),
-     Input('holiday_flag', 'holiday')])
-
+     Input('weather_dropdown', 'value'),
+     Input('low_temp', 'value'),
+     Input('high_temp', 'value'),
+     Input('severe_flag', 'value'),
+     Input('holiday_flag', 'value')])
 
 def update_pred(date, condition, low, high, severe, holiday):
-    
     date = pd.to_datetime(date)
     year = date.year
     month = date.month
@@ -181,23 +175,28 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['week'] = [week]*length
     df['dow'] = [dow]*length
 
-    df['is_holiday'] = [0]*length
+    holiday = 0 if holiday == 'No' else 1
+    df['is_holiday'] = [holiday]*length
 
     # Weather
 
-    df['temp_min'] = [65]*length
-    df['temp_max'] = [65]*length
-    df['weather_id'] = [800]*length
-    df['severe'] = [0]*length
+    df['temp_min'] = [low]*length
+    df['temp_max'] = [high]*length
+    df['weather_id'] = [condition]*length
+
+    severe = 0 if severe == 'No' else 1
+    df['severe'] = [severe]*length
 
     lat_max =  42.46
     lon_max = -82.91
     lat_min =  42.25
     lon_min = -83.28
 
+    # Total size of the gridspace
     lon_range = lon_max - lon_min
     lat_range = lat_max - lat_min
 
+    #length of an individual grid section
     lat_length = lat_range / 10
     lon_length = lon_range / 15
     
