@@ -35,23 +35,23 @@ column1 = dbc.Col(
         html.Hr(),
 
         html.H5('Select A Day',
-        style={'padding-left':'30%'}),
+        style={'padding-left':'32%'}),
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
         placeholder='MMMM Y',
         date=dt.datetime(2020,11,21),
-        style={'padding-left':'28%'}),
+        style={'padding-left':'30%'}),
         html.Br(),
         html.Br(),
 
-        html.H5('Weather Forecast', style={'padding-left':'25%'}),
-        html.Br(),
+        html.H5('Weather Forecast', style={'padding-left':'27%'}),
         dcc.Dropdown(
             id = 'weather_dropdown',
             options = [{'label': i, 'value': j} for i,j in weather_options.items()],
             value = 800
         ),
+        html.Br()
 
         html.H5('Forecasted Temperature', style={'padding-left':'19%'}),
         html.Hr(),
