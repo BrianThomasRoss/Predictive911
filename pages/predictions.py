@@ -36,7 +36,6 @@ column1 = dbc.Col(
 
         html.H5('Select A Day',
         style={'padding-left':'30%'}),
-        html.Br(),
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
@@ -53,7 +52,6 @@ column1 = dbc.Col(
             options = [{'label': i, 'value': j} for i,j in weather_options.items()],
             value = 800
         ),
-        html.Br(),
 
         html.H5('Forecasted Temperature', style={'padding-left':'19%'}),
         html.Hr(),
