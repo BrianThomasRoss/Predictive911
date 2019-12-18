@@ -35,7 +35,7 @@ column1 = dbc.Col(
         html.Hr(),
 
         html.H5('Select A Day',
-        style={'padding-left':'32%'}),
+        style={'padding-left':'0%'}),
         dcc.DatePickerSingle(
         id = 'datepicker',
         month_format ='MMMM Y',
@@ -45,7 +45,7 @@ column1 = dbc.Col(
         html.Br(),
         html.Br(),
 
-        html.H5('Weather Forecast', style={'padding-left':'27%'}),
+        html.H5('Weather Forecast', style={'padding-left':'0%'}),
         dcc.Dropdown(
             id = 'weather_dropdown',
             options = [{'label': i, 'value': j} for i,j in weather_options.items()],
@@ -53,10 +53,10 @@ column1 = dbc.Col(
         ),
         html.Br(),
 
-        html.H5('Forecasted Temperature', style={'padding-left':'19%'}),
+        html.H5('Forecasted Temperature', style={'padding-left':'0%'}),
         html.Hr(),
 
-        html.H6('Low', style={'padding-left':'45%'}),
+        html.H6('Low', style={'padding-left':'0%'}),
         dcc.Slider(
         id= 'low_temp',
         value=60,
@@ -71,7 +71,7 @@ column1 = dbc.Col(
         },
         included=False),
 
-        html.H6('High', style={'padding-left':'44%'}),
+        html.H6('High', style={'padding-left':'0%'}),
         dcc.Slider(
         id= 'high_temp',
         value=70,
@@ -87,7 +87,7 @@ column1 = dbc.Col(
         included=False),
         html.Hr(),
 
-        html.H5('Severe Weather', style={'padding-left':'30%'}),
+        html.H5('Severe Weather', style={'padding-left':'0%'}),
         dcc.RadioItems(
         id = 'severe_flag',
         options = [
@@ -99,10 +99,10 @@ column1 = dbc.Col(
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
-        style={'padding-left':'33%'}
+        style={'padding-left':'0%'}
         ),
 
-        html.H5('Holiday Or Event', style={'padding-left':'27%'}),
+        html.H5('Holiday Or Event', style={'padding-left':'0%'}),
         dcc.RadioItems(
         id = 'holiday_flag',
         options = [
@@ -113,7 +113,7 @@ column1 = dbc.Col(
         labelStyle = {
         'display': 'inline-block',
         'margin-right': 30},
-        style={'padding-left':'33%'}
+        style={'padding-left':'0%'}
         ),
         html.Hr(),
     ],
