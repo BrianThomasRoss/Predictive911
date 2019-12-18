@@ -41,7 +41,7 @@ column1 = dbc.Col(
         month_format ='MMMM Y',
         placeholder='MMMM Y',
         date=dt.datetime(2020,11,21),
-        style={'padding-left':'30%'}),
+        style={'padding-left':'0%'}),
         html.Br(),
         html.Br(),
 
