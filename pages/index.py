@@ -35,7 +35,7 @@ data = pd.read_csv('https://raw.githubusercontent.com/BrianThomasRoss/predictive
 
 token = ('pk.eyJ1IjoiYnJpYW50aG9tYXNyb3NzIiwiYSI6ImNrMzY5ZTFyeDFvbm0zbXBwcGU4eW9wZWYifQ.BdRmQ9Q7siK7XNnFTvuasQ')
 
-fig = px.scatter_mapbox(data, lat = 'latitude', lon = 'longitude', hover_name='calldescription',zoom=10.25)
+fig = px.scatter_mapbox(data, lat = 'latitude', lon = 'longitude', hover_name='calldescription',height =650, zoom=10.25)
 fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(mapbox_style="dark", mapbox_accesstoken = token)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})

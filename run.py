@@ -16,7 +16,8 @@ navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
-        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')), 
+        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')),
+        dbc.NavItem(dcc.Link('Hire Me', href='/hire', className='nav-link')) 
     ],
     sticky='top',
     color='dark', 

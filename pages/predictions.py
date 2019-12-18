@@ -208,13 +208,14 @@ def update_pred(date, condition, low, high, severe, holiday):
     df['lat_center'] = lat_min + ((lat_length * df['lat_grid']) + (.5*lat_length))
     df['lon_center'] = lon_min + ((lon_length * df['lon_grid']) + (.5*lon_length))
 
-    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df['count'], radius=60,
-                    showscale=False))
+    fig = go.Figure(go.Densitymapbox(lat=df.lat_center, lon=df.lon_center, z=df['count'], radius=70,
+                    showscale=False, hovertemplate='Number of Calls Predicted: %{z:.0f}<extra></extra>',
+                    colorscale='Jet'))
     fig.update_layout(
         mapbox = {
             'accesstoken': token,
             'style': "dark",
-            'zoom': 10},
+            'zoom': 10.25},
         margin={"r":0,"t":0,"l":0,"b":0},
         showlegend = False,
         mapbox_center_lon =-83.09587,
