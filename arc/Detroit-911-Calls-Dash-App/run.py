@@ -36,8 +36,7 @@ navbar = dbc.NavbarSimple(
     sticky='top',
     color='dark', 
     light=False, 
-    dark=True
-)
+    dark=True)
 
 footer = dbc.Container(
     dbc.Row(
