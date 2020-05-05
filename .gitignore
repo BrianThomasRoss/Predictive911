@@ -2,5 +2,5 @@
 .vscode/*
 # Jupyter
 .ipynb_checkpoints/*
-# 
-data/911_Calls_For_Service.csv
+# remove once split
+911_Calls_For_Service.csv
